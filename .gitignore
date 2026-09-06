@@ -1,0 +1,39 @@
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Camera RAW & heavy image dumps
+*.arw
+*.ARW
+*.cr2
+*.CR2
+*.cr3
+*.CR3
+*.nef
+*.NEF
+*.dng
+*.DNG
+*.raf
+*.RAF
+*.rw2
+*.RW2
+*.tif
+*.tiff
