@@ -12,6 +12,7 @@ from core.ml_clustering import (
     compute_photographer_radar, 
     generate_photographer_card_profile
 )
+from core.card_generator import render_photographer_card_image
 
 st.set_page_config(page_title="PhotoIQ | Photography Analytics & ML Profiler", layout="wide", page_icon="📷")
 
@@ -308,50 +309,44 @@ if df is not None and len(df) > 0:
                     st.divider()
 
     with tab6:
-        st.subheader("🪪 Photographer DNA Card")
-        st.markdown("Your official, shareable photographer persona card computed from your EXIF signal data.")
+        st.subheader("🪪 Pro Photographer DNA Card")
+        st.markdown("Your official, shareable photographer persona pass computed from your EXIF signal data.")
         
         radar_scores = compute_photographer_radar(df)
         card = generate_photographer_card_profile(df, radar_scores)
         
-        import textwrap
-        # Sleek Glassmorphism Card
-        card_html = textwrap.dedent(f"""
-        <div style="background: linear-gradient(135deg, #181926 0%, #0d0e15 100%);
-                    border: 2px solid #00CC96; border-radius: 18px; padding: 28px;
-                    max-width: 650px; margin: 15px auto; box-shadow: 0 10px 30px rgba(0,204,150,0.18);
-                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #ffffff;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px;">
-                <span style="color: #00CC96; font-weight: 700; letter-spacing: 2px; font-size: 13px;">PHOTOGRAPHER ID • 2026</span>
-                <span style="background: #00CC96; color: #111111; font-weight: 800; padding: 4px 12px; border-radius: 20px; font-size: 13px;">LEVEL {card['overall_level']}</span>
-            </div>
+        col_card_preview, col_card_actions = st.columns([1.6, 1.4])
+        
+        with st.spinner("Generating high-resolution card..."):
+            card_img_bytes = render_photographer_card_image(card, radar_scores)
             
-            <h2 style="color: #ffffff; margin: 18px 0 6px 0; font-size: 26px; letter-spacing: -0.5px;">{card['title']}</h2>
-            <div style="color: #9aa0a6; font-size: 14px; margin-bottom: 22px;">Primary Loadout: <span style="color: #e8eaed; font-weight: 500;">{card['camera']} + {card['lens']}</span></div>
+        with col_card_preview:
+            st.image(card_img_bytes, caption="Official Photographer ID Pass (1280x1760 HD)", use_container_width=True)
             
-            <div style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 14px 18px; margin-bottom: 20px;">
-                <div style="color: #8ab4f8; font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 600;">Signature Settings Sweet-Spot</div>
-                <div style="color: #00CC96; font-size: 20px; font-weight: 700; margin-top: 4px; letter-spacing: 0.5px;">{card['sweet_spot']}</div>
-            </div>
+        with col_card_actions:
+            st.markdown("### 📥 Export Your Pass")
+            st.markdown("Download your personalized **Photographer ID Card** as a high-resolution PNG, formatted for Instagram, Twitter/X, or your portfolio.")
             
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px;">
-                <div style="background: rgba(0,204,150,0.08); border-left: 3px solid #00CC96; padding: 12px; border-radius: 6px;">
-                    <div style="color: #81c995; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;">SUPERPOWER</div>
-                    <div style="color: #ffffff; font-size: 15px; font-weight: 600; margin-top: 4px;">{card['top_stat']}</div>
-                </div>
-                <div style="background: rgba(239,85,59,0.08); border-left: 3px solid #EF553B; padding: 12px; border-radius: 6px;">
-                    <div style="color: #f28b82; font-size: 11px; font-weight: 700; letter-spacing: 0.5px;">GROWTH TARGET</div>
-                    <div style="color: #ffffff; font-size: 15px; font-weight: 600; margin-top: 4px;">{card['lowest_stat']}</div>
-                </div>
-            </div>
+            safe_title = card["title"].replace(" ", "_").replace("/", "_")
+            st.download_button(
+                label="💾 Download High-Res Card (PNG)",
+                data=card_img_bytes,
+                file_name=f"PhotoIQ_Pass_{safe_title}.png",
+                mime="image/png",
+                type="primary",
+                use_container_width=True
+            )
             
-            <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 14px;">
-                <div style="color: #fbbc04; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 5px;">🎯 NEXT GROWTH QUEST</div>
-                <div style="color: #d1d5db; font-size: 13.5px; line-height: 1.45;">{card['growth_quest']}</div>
-            </div>
-        </div>
-        """).strip()
-        st.html(card_html)
+            st.divider()
+            st.markdown("#### 📋 Profile Breakdown")
+            st.markdown(f"- **Archetype Class:** **{card['title']}**")
+            st.markdown(f"- **Rank:** **Level {card['overall_level']} Specialist**")
+            st.markdown(f"- **Primary Camera:** `{card['camera']}`")
+            st.markdown(f"- **Primary Lens:** `{card['lens']}`")
+            st.markdown(f"- **Signature Sweet-Spot:** `{card['sweet_spot']}`")
+            st.markdown(f"- **★ Superpower:** :green[**{card['top_stat']}**]")
+            st.markdown(f"- **🎯 Growth Target:** :red[**{card['lowest_stat']}**]")
+            st.info(f"**Next Quest:** {card['growth_quest']}")
 
     with tab7:
         st.subheader("Tailored Coaching Insights")
