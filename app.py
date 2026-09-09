@@ -170,6 +170,20 @@ if df is not None and len(df) > 0:
             )
             st.plotly_chart(fig_scatter, use_container_width=True)
 
+        st.subheader("Light Metering & Optical Field of View")
+        m_c1, m_c2 = st.columns(2)
+        with m_c1:
+            if "metering_mode" in df and df["metering_mode"].notnull().any():
+                fig_metering = px.pie(df, names="metering_mode", title="Light Metering Mode Distribution", hole=0.45,
+                                      color_discrete_sequence=px.colors.sequential.Teal)
+                st.plotly_chart(fig_metering, use_container_width=True)
+        with m_c2:
+            if "focal_length_35mm" in df and df["focal_length_35mm"].notnull().any():
+                fig_fl = px.histogram(df.dropna(subset=["focal_length_35mm"]), x="focal_length_35mm", nbins=25,
+                                      title="35mm Equivalent Focal Length (Field of View)",
+                                      color_discrete_sequence=["#00CC96"])
+                st.plotly_chart(fig_fl, use_container_width=True)
+
     with tab2:
         st.subheader("Tonal Curve & Dynamic Range Utilization")
         col_c1, col_c2 = st.columns(2)
@@ -304,7 +318,9 @@ if df is not None and len(df) > 0:
                         badge_color = "blue"
                         
                     st.markdown(f"**`{row['filename']}`** :{badge_color}[{tag}]")
-                    st.caption(f"⚙️ **f/{row.get('aperture')}** • **{row.get('shutter_str')}** • **ISO {int(row.get('iso', 0))}** • **{row.get('focal_length')}mm**")
+                    fl_eq_str = f" ({int(row['focal_length_35mm'])}mm eq.)" if pd.notnull(row.get("focal_length_35mm")) else ""
+                    st.caption(f"⚙️ **f/{row.get('aperture')}** • **{row.get('shutter_str')}** • **ISO {int(row.get('iso', 0))}** • **{row.get('focal_length')}mm{fl_eq_str}**")
+                    st.caption(f"🎯 Metering: **{row.get('metering_mode', 'Auto')}** • WB: **{row.get('white_balance', 'Auto')}** • Flash: **{row.get('flash_status', 'Off')}**")
                     st.info(row.get("diagnostic_reason", "Standard shot"))
                     st.divider()
 

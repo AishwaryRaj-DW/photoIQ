@@ -139,6 +139,20 @@ def process_single_image(file_source, filename):
         data["exposure_bias"] = safe_float(tags.get("EXIF ExposureBiasValue")) or 0.0
         data["exposure_program"] = str(tags.get("EXIF ExposureProgram", "Unknown")).strip()
         data["exposure_mode"] = str(tags.get("EXIF ExposureMode", "Unknown")).strip()
+        data["metering_mode"] = str(tags.get("EXIF MeteringMode", "Unknown")).strip()
+        data["white_balance"] = str(tags.get("EXIF WhiteBalance", "Unknown")).strip()
+        
+        fl_35 = safe_float(tags.get("EXIF FocalLengthIn35mmFilm"))
+        if fl_35:
+            data["focal_length_35mm"] = fl_35
+        elif data["focal_length"]:
+            data["focal_length_35mm"] = round(data["focal_length"] * 1.5, 1)
+        else:
+            data["focal_length_35mm"] = None
+            
+        flash_str = str(tags.get("EXIF Flash", "")).strip()
+        data["flash_fired"] = bool("fired" in flash_str.lower() and "not fire" not in flash_str.lower())
+        data["flash_status"] = "Fired" if data["flash_fired"] else "Off"
         
         if "Image Model" in tags:
             data["camera_model"] = str(tags["Image Model"]).strip()
