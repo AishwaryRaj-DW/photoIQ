@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aishwary Raj | CV</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://praneeth-rdy.github.io/CV-Buddy/global.css">
+  <link rel="stylesheet" type="text/css" href="https://praneeth-rdy.github.io/CV-Buddy/iitkgp/styles.css">
+  <style>
+    /* Exact 1-Page A4 / Print Formatting */
+    @page {
+      size: A4;
+      margin: 8mm 12mm;
+    }
+    body {
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .cv-container {
+      width: 100%;
+      max-width: 900px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 24px 32px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+    }
+    @media print {
+      body {
+        background-color: #fff !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .cv-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+      }
+    }
+    /* Fine-tuned spacing for perfect 1-page fit */
+    .iitkgp-cv-container {
+      font-size: 13.5px !important;
+      padding: 0 !important;
+    }
+    .iitkgp-cv-container .section-heading {
+      font-size: 14.5px !important;
+      padding: 2.5px 0 !important;
+      margin-top: 8px !important;
+      margin-bottom: 5px !important;
+      letter-spacing: 0.5px;
+    }
+    .iitkgp-cv-container table tr td,
+    .iitkgp-cv-container table .table-header th {
+      font-size: 13px !important;
+      padding: 1.5px 6px !important;
+    }
+    .iitkgp-cv-container ul li {
+      font-size: 13px !important;
+      line-height: 1.35 !important;
+      margin-bottom: 2px !important;
+    }
+    .iitkgp-cv-container ul li.heading {
+      font-size: 13.5px !important;
+      margin-top: 4px !important;
+      margin-bottom: 2px !important;
+    }
+    .iitkgp-cv-container .header h1 {
+      font-size: 22px !important;
+      margin-bottom: 1px !important;
+    }
+    .iitkgp-cv-container .header .campus {
+      font-size: 16px !important;
+    }
+    .iitkgp-cv-container .header img {
+      width: 72px !important;
+    }
+    .placeholder-item {
+      color: #6c757d;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print text-center my-3">
+    <button onclick="window.print()" class="btn btn-primary font-weight-bold px-4 shadow-sm">
+      🖨️ Print / Save as 1-Page PDF
+    </button>
+  </div>
+
+  <div id="cv" class="iitkgp-cv-container cv-container">
+    
+    <!-- HEADER -->
+    <div class="header">
+      <div>
+        <img src="https://praneeth-rdy.github.io/CV-Buddy/img/logo/kgp-logo.png" alt="IIT KGP Logo" />
+      </div>
+      <div style="text-align: center; flex-grow: 1;">
+        <h1><span class="name">AISHWARY RAJ</span> | <span class="roll">25IM10023</span></h1>
+        <h2 class="campus">Indian Institute of Technology Kharagpur</h2>
+      </div>
+      <div id="imageDiv">
+        <img id="previewImage" src="https://praneeth-rdy.github.io/CV-Buddy/img/ProfileImg/pp.jpg" alt="Profile" style="border: 1px solid #ddd;" />
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="education">
+      <h1 class="section-heading">Education</h1>
+      <div class="section-body">
+        <table>
+          <tr class="table-header">
+            <th style="width: 12%;">Year</th>
+            <th style="width: 38%;">Degree/Exam</th>
+            <th style="width: 35%;">Institute</th>
+            <th style="width: 15%;">CGPA/Percentage</th>
+          </tr>
+          <tr>
+            <td>2029</td>
+            <td>4YRS, B.Tech</td>
+            <td>IIT Kharagpur</td>
+            <td>8.92</td>
+          </tr>
+          <tr>
+            <td>2025</td>
+            <td>CBSE Board, Class XII</td>
+            <td>Mishra's Residential School</td>
+            <td>88.4%</td>
+          </tr>
+          <tr>
+            <td>2023</td>
+            <td>ICSE Board, Class X</td>
+            <td>Saint Francis School</td>
+            <td>98.4%</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- INTERNSHIPS AND PROJECTS -->
+    <div class="projects">
+      <h1 class="section-heading">Internships and Projects</h1>
+      <div class="section-body">
+        <ul>
+          <li class="heading">
+            <span>
+              PhotoIQ: Photography Analytics & ML Profiler
+              <span class="timeline">Aug'26 - Sep'26</span>
+            </span>
+            <span class="prof">Self Project</span>
+          </li>
+          <li>
+            Engineered an end-to-end signal analysis & ML pipeline parsing <strong>800+ RAW (.ARW, .CR2, .NEF)</strong> and JPEG images, extracting optical EXIF metadata and 256-bin luminance histograms in <strong>&lt;50ms per file</strong>.
+          </li>
+          <li>
+            Formulated a <strong>5-axis calibrated skill radar</strong> grounded in sensor physics, quantifying dynamic range utilization, optical diffraction limits (f/16+), reciprocal handshake risk, and manual exposure intentionality.
+          </li>
+          <li>
+            Trained <strong>unsupervised K-Means clustering</strong> models to profile photographic archetypes and built an interactive <strong>Streamlit</strong> dashboard featuring 3D exposure heatmaps, an anomaly/keeper gallery, and high-res card export.
+          </li>
+        </ul>
+        <ul style="margin-top: 4px;">
+          <li class="heading">
+            <span>
+              <span class="placeholder-item">[Academic / Coursework Project Title]</span>
+              <span class="timeline placeholder-item">[Timeline: e.g., Jan'26 - Apr'26]</span>
+            </span>
+            <span class="prof placeholder-item">[Course / Guide]</span>
+          </li>
+          <li class="placeholder-item">
+            [Problem Statement: Describe the algorithm, data structure, or problem explored].
+          </li>
+          <li class="placeholder-item">
+            [Implementation & Impact: Key tools used (e.g. C++, Python, Data Structures) and results achieved].
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SKILLS AND EXPERTISE -->
+    <div class="skills">
+      <h1 class="section-heading">Skills and expertise</h1>
+      <div class="section-body">
+        <ul>
+          <li>
+            <strong>Programming Languages:</strong> Python, C, C++, SQL (Basics)
+          </li>
+          <li>
+            <strong>Data Science & Machine Learning:</strong> Scikit-Learn, Pandas, NumPy, K-Means Clustering, Image Signal Processing
+          </li>
+          <li>
+            <strong>Libraries and Frameworks:</strong> Streamlit, Plotly, Matplotlib, Pillow (PIL), RawPy, ExifRead
+          </li>
+          <li>
+            <strong>Tools & Platforms:</strong> Git, GitHub, VS Code, Linux / PowerShell CLI
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- COURSEWORK INFORMATION -->
+    <div class="courses">
+      <h1 class="section-heading">Coursework Information</h1>
+      <div class="section-body">
+        <table class="list-table">
+          <tr>
+            <td>Programming and Data Structures</td>
+            <td>Linear Algebra and Calculus</td>
+          </tr>
+          <tr>
+            <td>Transform Calculus</td>
+            <td>Engineering Mechanics</td>
+          </tr>
+          <tr>
+            <td>Electrical Technology</td>
+            <td>Science of Living Systems</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <!-- POSITIONS OF RESPONSIBILITY -->
+    <div class="pors">
+      <h1 class="section-heading">Positions of Responsibility</h1>
+      <div class="section-body">
+        <ul>
+          <li class="heading">
+            <span>
+              <span class="placeholder-item">[Position / Role Title]</span>
+              <span class="society placeholder-item">| [Society / Cell / Team Name]</span>
+            </span>
+            <span class="timeline placeholder-item">[Timeline: e.g., Aug'25 - Present]</span>
+          </li>
+          <li class="placeholder-item">
+            [Responsibility 1: Team leadership, event coordination, or initiative driven].
+          </li>
+          <li class="placeholder-item">
+            [Responsibility 2: Mentoring, logistics handling, or technical contribution].
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- AWARDS AND ACHIEVEMENTS -->
+    <div class="achievements">
+      <h1 class="section-heading">Awards and Achievements</h1>
+      <div class="section-body">
+        <ul>
+          <li>
+            Secured <strong>98.4% in ICSE Board (Class X)</strong> examinations; ranked among top school achievers.
+          </li>
+          <li>
+            Qualified <strong>JEE Advanced</strong> and <strong>JEE Main</strong>; secured admission into IIT Kharagpur (Top ~1% nationwide).
+          </li>
+          <li class="placeholder-item">
+            [Senior Discussion Point: Add any school olympiads, hackathon ranks, KVPY, or merit certificates].
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EXTRA CURRICULAR ACTIVITIES -->
+    <div class="extra-curricular-activities">
+      <h1 class="section-heading">Extra Curricular Activities</h1>
+      <div class="section-body">
+        <ul>
+          <li>
+            <strong>Photography & Visual Media:</strong> Technical enthusiast focusing on street & telephoto capture; developed automated EXIF profiling pipeline on 800+ RAW digital assets.
+          </li>
+          <li class="placeholder-item">
+            [Senior Discussion Point: Sports, Hall GC events, Illumination / Rangoli, or cultural events].
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
