@@ -42,7 +42,7 @@
       }
     }
     
-    /* Clean, well-spaced 1-Page proportions */
+    /* Clean, well-spaced 1-Page proportions with comfortable margins */
     .iitkgp-cv-container {
       font-size: 14px !important;
       padding: 0 !important;
@@ -63,15 +63,27 @@
       font-size: 13.5px !important;
       padding: 3px 8px !important;
     }
+    .iitkgp-cv-container ul {
+      padding-left: 24px !important;
+      margin-left: 0 !important;
+      margin-bottom: 0 !important;
+    }
     .iitkgp-cv-container ul li {
       font-size: 13.5px !important;
       line-height: 1.45 !important;
       margin-bottom: 4px !important;
+      padding-left: 4px !important;
     }
     .iitkgp-cv-container ul li.heading {
       font-size: 14px !important;
       margin-top: 6px !important;
       margin-bottom: 3px !important;
+      margin-left: -20px !important;
+      padding-left: 0 !important;
+    }
+    .iitkgp-cv-container table.list-table {
+      margin-left: 12px !important;
+      width: calc(100% - 12px) !important;
     }
     .iitkgp-cv-container .header h1 {
       font-size: 24px !important;
@@ -102,9 +114,9 @@
   <div id="cv" class="iitkgp-cv-container cv-container">
     
     <!-- HEADER -->
-    <div class="header">
-      <div>
-        <img src="https://praneeth-rdy.github.io/CV-Buddy/img/logo/kgp-logo.png" alt="IIT KGP Logo" />
+    <div class="header d-flex align-items-center justify-content-between">
+      <div style="width: 80px; flex-shrink: 0;">
+        <img src="https://praneeth-rdy.github.io/CV-Buddy/img/logo/kgp-logo.png" alt="IIT KGP Logo" style="width: 75px !important;" />
       </div>
       <div style="text-align: center; flex-grow: 1;">
         <h1 style="font-size: 22px; font-weight: 700; margin-bottom: 2px;">
@@ -133,9 +145,8 @@
           </a>
         </div>
       </div>
-      <div id="imageDiv">
-        <img id="previewImage" src="https://praneeth-rdy.github.io/CV-Buddy/img/ProfileImg/pp.jpg" alt="Profile" style="border: 1px solid #ddd;" />
-      </div>
+      <!-- Right-side balance spacer matching logo width -->
+      <div style="width: 80px; flex-shrink: 0;"></div>
     </div>
 
     <!-- 1. EDUCATION -->
