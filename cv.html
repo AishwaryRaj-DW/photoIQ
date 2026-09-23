@@ -12,7 +12,7 @@
     }
     @page {
       size: A4 portrait;
-      margin: 0; /* Suppresses browser headers (date/time/URL) */
+      margin: 8mm 12mm 8mm 12mm;
     }
     html, body {
       margin: 0;
@@ -24,38 +24,36 @@
       print-color-adjust: exact !important;
     }
     .cv-container {
-      width: 100%;
-      max-width: 900px;
-      margin: 24px auto;
+      width: 96%;
+      max-width: 1140px; /* Expands to fill screen comfortably like CV-Buddy standard */
+      margin: 20px auto;
       background: #ffffff;
-      padding: 36px 44px;
+      padding: 32px 48px;
       box-shadow: 0 4px 24px rgba(0,0,0,0.08);
       box-sizing: border-box;
     }
     @media print {
       html, body {
-        width: 210mm !important;
-        height: 297mm !important;
+        width: 100% !important;
+        height: auto !important;
         background-color: #ffffff !important;
         margin: 0 !important;
         padding: 0 !important;
-        overflow: hidden !important;
       }
       .no-print {
         display: none !important;
       }
       #cv, .cv-container {
         position: static !important;
-        width: 210mm !important;
-        max-width: 210mm !important;
-        height: 297mm !important;
-        max-height: 297mm !important;
-        margin: 0 auto !important;
-        padding: 12mm 14mm 10mm 14mm !important; /* Balanced full-page A4 print margins */
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important; /* Full width edge-to-edge within @page margins */
         box-shadow: none !important;
         border: none !important;
         box-sizing: border-box !important;
-        overflow: hidden !important;
+        overflow: visible !important; /* Never cuts off sections */
         page-break-after: avoid !important;
         page-break-inside: avoid !important;
       }
