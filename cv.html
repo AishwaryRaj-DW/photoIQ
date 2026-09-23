@@ -8,13 +8,12 @@
   <link rel="stylesheet" type="text/css" href="https://praneeth-rdy.github.io/CV-Buddy/global.css">
   <link rel="stylesheet" type="text/css" href="https://praneeth-rdy.github.io/CV-Buddy/iitkgp/styles.css">
   <style>
-    /* Exact 1-Page A4 / Print Formatting */
     @page {
       size: A4;
-      margin: 8mm 12mm;
+      margin: 10mm 14mm;
     }
     body {
-      background-color: #f8f9fa;
+      background-color: #f4f6f8;
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
@@ -22,15 +21,15 @@
     .cv-container {
       width: 100%;
       max-width: 900px;
-      margin: 20px auto;
-      background: #fff;
-      padding: 24px 32px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin: 25px auto;
+      background: #ffffff;
+      padding: 30px 38px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       box-sizing: border-box;
     }
     @media print {
       body {
-        background-color: #fff !important;
+        background-color: #ffffff !important;
       }
       .no-print {
         display: none !important;
@@ -42,53 +41,60 @@
         max-width: 100% !important;
       }
     }
-    /* Fine-tuned spacing for perfect 1-page fit */
+    
+    /* Clean, well-spaced 1-Page proportions */
     .iitkgp-cv-container {
-      font-size: 13.5px !important;
+      font-size: 14px !important;
       padding: 0 !important;
+      color: #111111;
     }
     .iitkgp-cv-container .section-heading {
-      font-size: 14.5px !important;
-      padding: 2.5px 0 !important;
-      margin-top: 8px !important;
-      margin-bottom: 5px !important;
-      letter-spacing: 0.5px;
+      font-size: 15px !important;
+      padding: 3px 0 !important;
+      margin-top: 14px !important;
+      margin-bottom: 7px !important;
+      letter-spacing: 0.6px;
+      background-color: #dce1e2 !important;
+      border-top: 1px solid #b7bece !important;
+      border-bottom: 1px solid #b7bece !important;
     }
     .iitkgp-cv-container table tr td,
     .iitkgp-cv-container table .table-header th {
-      font-size: 13px !important;
-      padding: 1.5px 6px !important;
+      font-size: 13.5px !important;
+      padding: 3px 8px !important;
     }
     .iitkgp-cv-container ul li {
-      font-size: 13px !important;
-      line-height: 1.35 !important;
-      margin-bottom: 2px !important;
+      font-size: 13.5px !important;
+      line-height: 1.45 !important;
+      margin-bottom: 4px !important;
     }
     .iitkgp-cv-container ul li.heading {
-      font-size: 13.5px !important;
-      margin-top: 4px !important;
-      margin-bottom: 2px !important;
+      font-size: 14px !important;
+      margin-top: 6px !important;
+      margin-bottom: 3px !important;
     }
     .iitkgp-cv-container .header h1 {
-      font-size: 22px !important;
-      margin-bottom: 1px !important;
+      font-size: 24px !important;
+      margin-bottom: 2px !important;
     }
     .iitkgp-cv-container .header .campus {
-      font-size: 16px !important;
+      font-size: 17px !important;
+      color: #333333;
     }
     .iitkgp-cv-container .header img {
-      width: 72px !important;
+      width: 80px !important;
     }
-    .placeholder-item {
-      color: #6c757d;
-      font-style: italic;
+    .handle-link {
+      color: #000000 !important;
+      text-decoration: underline !important;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
 
   <div class="no-print text-center my-3">
-    <button onclick="window.print()" class="btn btn-primary font-weight-bold px-4 shadow-sm">
+    <button onclick="window.print()" class="btn btn-primary font-weight-bold px-4 py-2 shadow-sm">
       🖨️ Print / Save as 1-Page PDF
     </button>
   </div>
@@ -109,7 +115,7 @@
       </div>
     </div>
 
-    <!-- EDUCATION -->
+    <!-- 1. EDUCATION -->
     <div class="education">
       <h1 class="section-heading">Education</h1>
       <div class="section-body">
@@ -142,7 +148,7 @@
       </div>
     </div>
 
-    <!-- INTERNSHIPS AND PROJECTS -->
+    <!-- 2. INTERNSHIPS AND PROJECTS -->
     <div class="projects">
       <h1 class="section-heading">Internships and Projects</h1>
       <div class="section-body">
@@ -155,34 +161,22 @@
             <span class="prof">Self Project</span>
           </li>
           <li>
-            Engineered an end-to-end signal analysis & ML pipeline parsing <strong>800+ RAW (.ARW, .CR2, .NEF)</strong> and JPEG images, extracting optical EXIF metadata and 256-bin luminance histograms in <strong>&lt;50ms per file</strong>.
+            Engineered an end-to-end signal analysis & ML pipeline parsing <strong>RAW (.ARW, .CR2, .NEF)</strong> and JPEG images, extracting optical EXIF metadata and 256-bin luminance histograms in <strong>&lt;50ms per file</strong>.
           </li>
           <li>
             Formulated a <strong>5-axis calibrated skill radar</strong> grounded in sensor physics, quantifying dynamic range utilization, optical diffraction limits (f/16+), reciprocal handshake risk, and manual exposure intentionality.
           </li>
           <li>
-            Trained <strong>unsupervised K-Means clustering</strong> models to profile photographic archetypes and built an interactive <strong>Streamlit</strong> dashboard featuring 3D exposure heatmaps, an anomaly/keeper gallery, and high-res card export.
+            Trained <strong>unsupervised K-Means clustering</strong> models on normalized multidimensional exposure spaces to classify shooting archetypes and identify hardware utilization sweet-spots.
           </li>
-        </ul>
-        <ul style="margin-top: 4px;">
-          <li class="heading">
-            <span>
-              <span class="placeholder-item">[Academic / Coursework Project Title]</span>
-              <span class="timeline placeholder-item">[Timeline: e.g., Jan'26 - Apr'26]</span>
-            </span>
-            <span class="prof placeholder-item">[Course / Guide]</span>
-          </li>
-          <li class="placeholder-item">
-            [Problem Statement: Describe the algorithm, data structure, or problem explored].
-          </li>
-          <li class="placeholder-item">
-            [Implementation & Impact: Key tools used (e.g. C++, Python, Data Structures) and results achieved].
+          <li>
+            Developed an interactive <strong>Streamlit</strong> analytics dashboard featuring 3D exposure heatmaps, an anomaly/keeper photo gallery, and high-resolution exportable Photographer ID passes.
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- SKILLS AND EXPERTISE -->
+    <!-- 3. SKILLS AND EXPERTISE -->
     <div class="skills">
       <h1 class="section-heading">Skills and expertise</h1>
       <div class="section-body">
@@ -191,7 +185,7 @@
             <strong>Programming Languages:</strong> Python, C, C++, SQL (Basics)
           </li>
           <li>
-            <strong>Data Science & Machine Learning:</strong> Scikit-Learn, Pandas, NumPy, K-Means Clustering, Image Signal Processing
+            <strong>Data Science & Machine Learning:</strong> Scikit-Learn, Pandas, NumPy, K-Means Clustering, Image Signal Processing, Exploratory Data Analysis (EDA)
           </li>
           <li>
             <strong>Libraries and Frameworks:</strong> Streamlit, Plotly, Matplotlib, Pillow (PIL), RawPy, ExifRead
@@ -203,7 +197,7 @@
       </div>
     </div>
 
-    <!-- COURSEWORK INFORMATION -->
+    <!-- 4. COURSEWORK INFORMATION -->
     <div class="courses">
       <h1 class="section-heading">Coursework Information</h1>
       <div class="section-body">
@@ -224,56 +218,28 @@
       </div>
     </div>
 
-    <!-- POSITIONS OF RESPONSIBILITY -->
-    <div class="pors">
-      <h1 class="section-heading">Positions of Responsibility</h1>
-      <div class="section-body">
-        <ul>
-          <li class="heading">
-            <span>
-              <span class="placeholder-item">[Position / Role Title]</span>
-              <span class="society placeholder-item">| [Society / Cell / Team Name]</span>
-            </span>
-            <span class="timeline placeholder-item">[Timeline: e.g., Aug'25 - Present]</span>
-          </li>
-          <li class="placeholder-item">
-            [Responsibility 1: Team leadership, event coordination, or initiative driven].
-          </li>
-          <li class="placeholder-item">
-            [Responsibility 2: Mentoring, logistics handling, or technical contribution].
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- AWARDS AND ACHIEVEMENTS -->
+    <!-- 5. AWARDS AND ACHIEVEMENTS -->
     <div class="achievements">
       <h1 class="section-heading">Awards and Achievements</h1>
       <div class="section-body">
         <ul>
           <li>
-            Secured <strong>98.4% in ICSE Board (Class X)</strong> examinations; ranked among top school achievers.
+            Secured <strong>98.4% in ICSE Board (Class X)</strong> examinations; ranked among the top school achievers.
           </li>
           <li>
             Qualified <strong>JEE Advanced</strong> and <strong>JEE Main</strong>; secured admission into IIT Kharagpur (Top ~1% nationwide).
-          </li>
-          <li class="placeholder-item">
-            [Senior Discussion Point: Add any school olympiads, hackathon ranks, KVPY, or merit certificates].
           </li>
         </ul>
       </div>
     </div>
 
-    <!-- EXTRA CURRICULAR ACTIVITIES -->
+    <!-- 6. EXTRA CURRICULAR ACTIVITIES -->
     <div class="extra-curricular-activities">
       <h1 class="section-heading">Extra Curricular Activities</h1>
       <div class="section-body">
         <ul>
           <li>
-            <strong>Photography & Visual Media:</strong> Technical enthusiast focusing on street & telephoto capture; developed automated EXIF profiling pipeline on 800+ RAW digital assets.
-          </li>
-          <li class="placeholder-item">
-            [Senior Discussion Point: Sports, Hall GC events, Illumination / Rangoli, or cultural events].
+            <strong>Photography & Visual Editing:</strong> Enthusiastic street and landscape photographer & digital visual editor (<a class="handle-link" href="https://instagram.com/aish.vulc" target="_blank">@aish.vulc</a>); experienced in optical camera mechanics, color grading, and digital post-processing workflows.
           </li>
         </ul>
       </div>
