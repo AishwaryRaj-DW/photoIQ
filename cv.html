@@ -9,92 +9,112 @@
   <link rel="stylesheet" type="text/css" href="https://praneeth-rdy.github.io/CV-Buddy/iitkgp/styles.css">
   <style>
     @page {
-      size: A4;
-      margin: 10mm 14mm;
+      size: A4 portrait;
+      margin: 0; /* Eliminates browser default date, time, title, and URL headers/footers */
     }
     body {
       background-color: #f4f6f8;
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     .cv-container {
       width: 100%;
       max-width: 900px;
-      margin: 25px auto;
+      margin: 20px auto;
       background: #ffffff;
-      padding: 30px 38px;
+      padding: 24px 34px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
       box-sizing: border-box;
     }
     @media print {
-      body {
+      html, body {
+        width: 210mm;
+        height: 297mm;
         background-color: #ffffff !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: hidden;
       }
       .no-print {
         display: none !important;
       }
       .cv-container {
+        width: 210mm !important;
+        max-width: 210mm !important;
+        height: 297mm !important;
+        max-height: 297mm !important;
         margin: 0 !important;
-        padding: 0 !important;
+        padding: 8mm 12mm !important; /* Clean printable margin */
         box-shadow: none !important;
-        max-width: 100% !important;
+        box-sizing: border-box !important;
+        page-break-after: avoid !important;
+        page-break-inside: avoid !important;
       }
     }
     
-    /* Clean, well-spaced 1-Page proportions with comfortable margins */
+    /* Clean, well-spaced 1-Page proportions */
     .iitkgp-cv-container {
-      font-size: 14px !important;
+      font-size: 13.5px !important;
       padding: 0 !important;
       color: #111111;
     }
     .iitkgp-cv-container .section-heading {
-      font-size: 15px !important;
-      padding: 3px 0 !important;
-      margin-top: 14px !important;
-      margin-bottom: 7px !important;
-      letter-spacing: 0.6px;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      padding: 2.5px 0 !important;
+      margin-top: 9px !important;
+      margin-bottom: 4px !important;
+      letter-spacing: 0.5px;
       background-color: #dce1e2 !important;
       border-top: 1px solid #b7bece !important;
       border-bottom: 1px solid #b7bece !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     .iitkgp-cv-container table tr td,
     .iitkgp-cv-container table .table-header th {
-      font-size: 13.5px !important;
-      padding: 3px 8px !important;
+      font-size: 13px !important;
+      padding: 2px 7px !important;
     }
     .iitkgp-cv-container ul {
-      padding-left: 24px !important;
+      padding-left: 22px !important;
       margin-left: 0 !important;
       margin-bottom: 0 !important;
     }
     .iitkgp-cv-container ul li {
-      font-size: 13.5px !important;
-      line-height: 1.45 !important;
-      margin-bottom: 4px !important;
-      padding-left: 4px !important;
+      font-size: 13px !important;
+      line-height: 1.38 !important;
+      margin-bottom: 3px !important;
+      padding-left: 3px !important;
     }
     .iitkgp-cv-container ul li.heading {
-      font-size: 14px !important;
-      margin-top: 6px !important;
-      margin-bottom: 3px !important;
-      margin-left: -20px !important;
+      font-size: 13.5px !important;
+      margin-top: 4px !important;
+      margin-bottom: 2px !important;
+      margin-left: -19px !important;
       padding-left: 0 !important;
     }
     .iitkgp-cv-container table.list-table {
-      margin-left: 12px !important;
-      width: calc(100% - 12px) !important;
+      margin-left: 10px !important;
+      width: calc(100% - 10px) !important;
+    }
+    .iitkgp-cv-container table.list-table td {
+      padding: 1.5px 6px !important;
+      font-size: 13px !important;
     }
     .iitkgp-cv-container .header h1 {
-      font-size: 24px !important;
-      margin-bottom: 2px !important;
+      font-size: 21px !important;
+      margin-bottom: 1px !important;
     }
     .iitkgp-cv-container .header .campus {
-      font-size: 17px !important;
+      font-size: 13.5px !important;
       color: #333333;
     }
     .iitkgp-cv-container .header img {
-      width: 80px !important;
+      width: 70px !important;
     }
     .handle-link {
       color: #000000 !important;
@@ -114,21 +134,21 @@
   <div id="cv" class="iitkgp-cv-container cv-container">
     
     <!-- HEADER -->
-    <div class="header d-flex align-items-center justify-content-between">
-      <div style="width: 80px; flex-shrink: 0;">
-        <img src="https://praneeth-rdy.github.io/CV-Buddy/img/logo/kgp-logo.png" alt="IIT KGP Logo" style="width: 75px !important;" />
+    <div class="header d-flex align-items-center justify-content-between" style="margin-bottom: 2px;">
+      <div style="width: 70px; flex-shrink: 0;">
+        <img src="https://praneeth-rdy.github.io/CV-Buddy/img/logo/kgp-logo.png" alt="IIT KGP Logo" style="width: 65px !important;" />
       </div>
       <div style="text-align: center; flex-grow: 1;">
-        <h1 style="font-size: 22px; font-weight: 700; margin-bottom: 2px;">
+        <h1 style="font-size: 21px; font-weight: 700; margin-bottom: 1px;">
           <span class="name">AISHWARY RAJ</span> | <span class="roll">25IM10023</span>
         </h1>
-        <div style="font-size: 14.5px; font-weight: 600; color: #111; letter-spacing: 0.3px; margin-bottom: 1px;">
+        <div style="font-size: 13.5px; font-weight: 600; color: #111; letter-spacing: 0.3px; margin-bottom: 1px;">
           B.Tech. (Hons.) in INDUSTRIAL AND SYSTEMS ENGINEERING
         </div>
-        <div class="campus" style="font-size: 14px; color: #333; margin-bottom: 6px;">
+        <div class="campus" style="font-size: 13px; color: #333; margin-bottom: 4px;">
           Indian Institute of Technology Kharagpur
         </div>
-        <div style="font-size: 12px; color: #333; display: flex; justify-content: center; align-items: center; gap: 16px;">
+        <div style="font-size: 12px; color: #333; display: flex; justify-content: center; align-items: center; gap: 14px;">
           <a href="https://github.com/AishwaryRaj-DW" target="_blank" style="color: #111; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center;">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" style="vertical-align: -1px; margin-right: 4px;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
             GitHub
@@ -146,7 +166,7 @@
         </div>
       </div>
       <!-- Right-side balance spacer matching logo width -->
-      <div style="width: 80px; flex-shrink: 0;"></div>
+      <div style="width: 70px; flex-shrink: 0;"></div>
     </div>
 
     <!-- 1. EDUCATION -->
